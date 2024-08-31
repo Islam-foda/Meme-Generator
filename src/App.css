@@ -1,0 +1,23 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: Karla;
+}
+
+nav {
+  display: flex;
+  background: linear-gradient(90deg, #672280 1.18%, #a626d3 100%);
+  padding: 1.1rem;
+  color: white;
+  font-size: 20.75px;
+  font-weight: 700;
+  /* line-height: 24.25px; */
+  letter-spacing: -0.1em;
+  text-align: left;
+  gap: 0.6em;
+}
+nav .nav {
+  width: 31px;
+  height: 31px;
+}
