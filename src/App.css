@@ -55,7 +55,6 @@ main > form .button {
 }
 
 .imgStyle {
-  width: 400px;
-  height: 400px;
-  border: 1px solid #eee;
+  width: 100%;
+  border: 1px solid #575555;
 }
