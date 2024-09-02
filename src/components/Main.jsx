@@ -1,20 +1,22 @@
-import memes from "../assets/memedData"
+import React, { useState } from "react";
+import memes from "../assets/memedData";
+
 
 export default function Main(){
-    function memesReturn(){
-        const meme = memes.data.memes.map((ele)=>{
-            return (ele.url)
-        })
-        return console.log(meme[Math.floor(Math.random()*meme.length)])
+    let memeUrl;
+    function memesReturn(e){
+        const memesArray = memes.data.memes;
+        memeUrl = memesArray[Math.floor(Math.random()*memesArray.length)].url
+        console.log(memeUrl)
+        e.preventDefault();
+        return memeUrl
     }
 
-    function genMeme(e){
-    const meme = e.target;
 
-    meme.background = memesReturn()
-    e.preventDefault()
+    function meme(){
+        console.log(memeUrl)
     }
-
+meme()
     
 
     return(
@@ -26,7 +28,11 @@ export default function Main(){
                 <label>Bottom Text
                 <input className="input" type="text" placeholder="bottom text"/>
                 </label>
-                <button onClick={genMeme}  className="button">Get a new meme image  🖼 </button>
+                <button onClick={memesReturn}  className="button">Get a new meme image  🖼 </button>
+                <div>
+                <img className="imgStyle" src={memeUrl} alt="asd" />
+                </div>
+                
             </form>
         </main>
     )

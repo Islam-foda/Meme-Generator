@@ -53,3 +53,9 @@ main > form .button {
   border-radius: 4px;
   grid-column: 1/-1;
 }
+
+.imgStyle {
+  width: 400px;
+  height: 400px;
+  border: 1px solid #eee;
+}
