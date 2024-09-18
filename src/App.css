@@ -57,7 +57,6 @@ main > .form .button {
 
 .imgStyle {
   width: 100%;
-<<<<<<< HEAD
   border: 3px solid #abacae;
   border-radius: 2%;
 }
@@ -71,7 +70,4 @@ main > .form .button {
   text-align: center;
   background-color: #08003171;
   color: #eee;
-=======
-  border: 1px solid #575555;
->>>>>>> d6132d35f82cc30e6f74dbd38c3ea1ffcad35dab
 }
