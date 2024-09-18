@@ -27,19 +27,19 @@ main {
   padding: 30px;
 }
 
-main > form {
+main > .form {
   display: grid;
-  grid-template: 100% 100%/1fr 1fr;
+  grid-template: 1fr 1fr/1fr 1fr;
   gap: 17px;
 }
-form .input {
+.form .input {
   border-radius: 4px;
   border: 0.82px solid #d1d5db;
   text-indent: 5px;
   height: 35px;
   width: 100%;
 }
-main > form .button {
+main > .form .button {
   background: linear-gradient(90.41deg, #711f8d 1.14%, #a818da 100%);
   color: #fff;
   font-family: Karla;
@@ -52,10 +52,22 @@ main > form .button {
   cursor: pointer;
   border-radius: 4px;
   grid-column: 1/-1;
+  animation: scale 0.03s;
 }
 
 .imgStyle {
-  width: 400px;
-  height: 400px;
-  border: 1px solid #eee;
+  width: 100%;
+  border: 3px solid #abacae;
+  border-radius: 2%;
+}
+
+.top,
+.bottom {
+  font-size: 24px;
+  font-weight: bolder;
+  line-height: 29.05px;
+  padding: 10px;
+  text-align: center;
+  background-color: #08003171;
+  color: #eee;
 }
