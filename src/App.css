@@ -1,73 +1,108 @@
+:root {
+  --main-color: #4e4e4e;
+  --secondary-color: #f0f0f0;
+  --main-background: #eee;
+  --secondary-background: #464444;
+  --main-font: "Karla", sans-serif;
+  --secondary-font: "Inter", sans-serif;
+  --border-Radius: 0.6em;
+}
 * {
-  padding: 0px;
-  margin: 0px;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
-  font-family: Karla;
-
-  transition: ease 0.3s;
 }
 
+body {
+  background-color: var(--main-background);
+  font-family: var(--main-font);
+  transition: ease-in-out 0.5s;
+}
+
+/* ----Start nav-bar style-------- */
 nav {
   display: flex;
-  background: linear-gradient(90deg, #672280 1.18%, #a626d3 100%);
-  padding: 1.1rem;
-  color: white;
-  font-size: 20.75px;
-  font-weight: 700;
-  /* line-height: 24.25px; */
-  letter-spacing: -0.1em;
-  text-align: left;
-  gap: 0.6em;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 1.5rem;
+  box-shadow: 0px 6px 9px 0px #4c4c4c5c;
 }
-nav .nav {
-  width: 31px;
-  height: 31px;
+.nav-left {
+  display: flex;
+  align-items: center;
 }
-main {
-  padding: 30px;
+nav h3 {
+  margin-left: 1rem;
 }
-
-main > .form {
-  display: grid;
-  grid-template: 1fr 1fr/1fr 1fr;
-  gap: 17px;
+nav img {
+  width: 3rem;
 }
-.form .input {
-  border-radius: 4px;
-  border: 0.82px solid #d1d5db;
-  text-indent: 5px;
-  height: 35px;
-  width: 100%;
-}
-main > .form .button {
-  background: linear-gradient(90.41deg, #711f8d 1.14%, #a818da 100%);
-  color: #fff;
-  font-family: Karla;
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 18.7px;
-  letter-spacing: -0.1em;
-  text-align: center;
-  border: none;
+.nav-right button {
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-Radius);
   cursor: pointer;
-  border-radius: 4px;
-  grid-column: 1/-1;
-  animation: scale 0.03s;
 }
-
-.imgStyle {
+/* ----End nav-bar style-------- */
+main {
+  padding: 2.5rem 2.5rem;
+  margin: auto;
+}
+.main form {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.main form > * {
+  flex: 1 1 40rem;
+}
+.main form label {
+  padding-right: 0.5em;
+  font-size: 20px;
+  letter-spacing: 0.2em;
+}
+.main form label :first-child {
+  border-radius: var(--border-Radius);
+  padding: 0.5rem 1rem;
   width: 100%;
-  border: 3px solid #abacae;
-  border-radius: 2%;
+}
+.button {
+  padding: 1rem;
+  border-radius: var(--border-Radius);
+  cursor: pointer;
+  border: 1px solid var(--main-color);
+}
+.meme {
+  padding-top: 1.5em;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.meme img {
+  width: 80%;
+}
+.meme .top,
+.main .bottom {
+  border-radius: var(--border-Radius);
+  background-color: var(--main-background);
+  color: var(--main-color);
+  padding: 0.2em;
+  position: absolute;
 }
 
-.top,
-.bottom {
-  font-size: 24px;
-  font-weight: bolder;
-  line-height: 29.05px;
-  padding: 10px;
-  text-align: center;
-  background-color: #08003171;
-  color: #eee;
+.meme .bottom {
+  bottom: 0;
 }
+/* ----End Main style-------- */
+/* ----Start Main style-------- */
+
+/* ------------------ */
+/* Dark Mode styles */
+
+.dark {
+  background-color: var(--secondary-background);
+  color: var(--secondary-color);
+  box-shadow: 0px 0px 10px 0px #f9f8f887;
+}
+/* ------------------ */

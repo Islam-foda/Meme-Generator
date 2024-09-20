@@ -1,10 +1,8 @@
-<<<<<<< HEAD
-import { React,  useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import {nanoid} from "nanoid"
 
-export default function Main() {
+export default function Main({darkMode}) {
   let [meme, setMeme] = useState("");
-  let [isBig, setIsBig] = useState(true);
   const [memeData,setMemeData] = useState({
     topText: "",
     bottomText: "",
@@ -17,7 +15,8 @@ export default function Main() {
       setMeme(data.data.memes));
     },[])
     
-  function memesReturn() {
+  function memesReturn(ev) {
+    ev.preventDefault();
     let random = Math.floor(Math.random() * meme.length);
     let memeUrl = meme[random].url;
    setMemeData(preVal => {
@@ -34,8 +33,8 @@ export default function Main() {
 
 
   return (
-    <main>
-      <div className="form">
+    <main className={`main ${darkMode ? "dark" : ""}`}>
+      <form onSubmit={memesReturn}>
         <label>
           Top Text
           <input 
@@ -59,58 +58,21 @@ export default function Main() {
                     />
         </label>
         <button
-          onMouseOver={() => setIsBig(!isBig)}
-          onMouseLeave={() => setIsBig(!isBig)}
-          onClick={memesReturn}
+          type="submit"
           id="btnStyle"
-          className="button"
-          style={{ transform: isBig ? "scale(1)" : "scale(1.05)" }}          
+          className={`button ${darkMode ? "dark" : ""}`}
+         
         >
           Get a new meme image 🖼{" "}
         </button>
-        <div>
+        </form>
+        <div className="meme">
           {memeData.topText && <h3 key={nanoid()} className="top">{memeData.topText}</h3>}
-          <img className="imgStyle" src={memeData.memeImage} alt="asd" />
+ 
+          <img className= "imgStyle" src={memeData.memeImage} alt="random Image" />
+          
           {memeData.bottomText && <h3 key={nanoid()} className="bottom">{memeData.bottomText}</h3>}
         </div>
-      </div>
+      
     </main>
-  );
-=======
-// eslint-disable-next-line no-unused-vars
-import React, { useState } from "react";
-import memes from "../assets/memedData";
-
-export default function Main() {
-    let [meme, setMeme] = useState("");
-
-
-    function memesReturn(ev) {
-        const memesArray = memes.data.memes;
-        const random = Math.floor(Math.random() * memesArray.length);
-        setMeme(memesArray[random].url);
-        ev.preventDefault()
-    }
-
-    return (
-        <main>
-            <form>
-                <label>
-                    Top Text
-                    <input className="input" type="text" placeholder="Top Text" />
-                </label>
-                <label>
-                    Bottom Text
-                    <input className="input" type="text" placeholder="bottom text" />
-                </label>
-                <button onClick={memesReturn} className="button">
-                    Get a new meme image  🖼
-                </button>
-                <div>
-                    <img className="imgStyle" src={meme} alt="" />
-                </div>
-            </form>
-        </main>
-    );
->>>>>>> d6132d35f82cc30e6f74dbd38c3ea1ffcad35dab
-}
+  )}
