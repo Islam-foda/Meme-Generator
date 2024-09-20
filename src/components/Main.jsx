@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+
 import {nanoid} from "nanoid"
 
 export default function Main({darkMode}) {
@@ -75,4 +75,6 @@ export default function Main({darkMode}) {
         </div>
       
     </main>
-  )}
+  );
+
+}
